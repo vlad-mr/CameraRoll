@@ -60,6 +60,7 @@ let uiTarget = Project.makeFrameworkTargets(
   dependencies: [
     .package(product: "SwiftDateStatic"),
     .package(product: "Localize_Swift"),
+    .package(product: "Moya"),
   ])
 let app = Project.makeAppTargets(
   name: "CameraRoll",
@@ -81,5 +82,8 @@ let project = Project(
     .remote(
       url: "https://github.com/marmelroy/Localize-Swift.git",
       requirement: .upToNextMajor(from: "3.2.0")),
+    .remote(
+      url: "https://github.com/Moya/Moya",
+      requirement: .upToNextMajor(from: "14.0.0")),
   ],
   targets: app + kit + uiTarget)

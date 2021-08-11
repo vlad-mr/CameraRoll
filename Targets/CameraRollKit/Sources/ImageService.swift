@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Moya
 
 public final class ImageService {
   public init() {}
