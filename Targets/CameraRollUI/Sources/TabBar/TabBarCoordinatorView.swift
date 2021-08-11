@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TabBarCoordinatorView: View {
 
-  // MARK: Internal
-
   @ObservedObject var coordinator: TabBarCoordinator
 
   var body: some View {

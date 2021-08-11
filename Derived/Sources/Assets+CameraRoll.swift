@@ -18,6 +18,7 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum CameraRollAsset {
   public static let brand = CameraRollImages(name: "brand")
+  public static let logoTransparent = CameraRollImages(name: "logo-transparent")
   public static let logo = CameraRollImages(name: "logo")
   public static let search = CameraRollImages(name: "search")
 }

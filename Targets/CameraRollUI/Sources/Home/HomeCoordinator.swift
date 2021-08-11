@@ -5,8 +5,8 @@
 //  Created by Volodymyr Kravchenko on 10.08.2021.
 //
 
-import Foundation
 import CameraRollKit
+import Foundation
 
 // MARK: - HomeScene
 
@@ -23,7 +23,7 @@ class HomeCoordinator: Coordinator {
 
   init(parent: TabBarCoordinator) {
     self.parent = parent
-    self.imageService = PersonsService()
+    imageService = PersonsService()
     homeViewModel = HomeViewModel(coordinator: self, service: imageService)
   }
 

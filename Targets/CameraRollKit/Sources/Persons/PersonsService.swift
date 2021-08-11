@@ -5,14 +5,20 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
+import Combine
+import CombineMoya
 import Foundation
 import Moya
-import CombineMoya
-import Combine
+
+// MARK: - PersonsService
 
 public final class PersonsService {
-  let provider: MoyaProvider<PersonsTarget> = .init()
+
+  // MARK: Lifecycle
+
   public init() {}
+
+  // MARK: Public
 
   public func fetchPersons(limit: Int = 50) -> AnyPublisher<[Person], NetworkError> {
     provider.requestPublisher(.fetch(limit: limit), callbackQueue: .main)
@@ -20,12 +26,15 @@ public final class PersonsService {
       .map { $0.results }
       .mapInternalError()
   }
+
+  // MARK: Internal
+
+  let provider: MoyaProvider<PersonsTarget> = .init()
 }
 
 extension Publisher where Self.Failure == MoyaError {
   func mapInternalError() -> AnyPublisher<Self.Output, NetworkError> {
-    return self
-      .mapError { $0.internal }
+    mapError { $0.internal }
       .eraseToAnyPublisher()
   }
 }

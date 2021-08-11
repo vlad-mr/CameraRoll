@@ -11,7 +11,7 @@
         }
       },
       {
-        "package": "Localize-Swift",
+        "package": "Localize_Swift",
         "repositoryURL": "https://github.com/marmelroy/Localize-Swift.git",
         "state": {
           "branch": null,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK: - OnboardingViews
+// MARK: - Views
 
 enum Views {
   @ViewBuilder
@@ -23,6 +23,13 @@ enum Views {
       Text(".").font(.poppins(12))
       Spacer()
     }.padding(.bottom, 50).padding(.top, 15)
+  }
+
+  @ViewBuilder
+  static var logo: some View {
+    Image("logo-transparent", bundle: nil)
+      .resizable().scaledToFit()
+      .frame(width: 400, height: 150, alignment: .center)
   }
 
   @ViewBuilder
@@ -75,13 +82,6 @@ enum Views {
       isSecure: isSecure,
       onFocusChange: onFocusChange,
       onTextChange: onTextChange)
-  }
-
-  @ViewBuilder
-  static var logo: some View {
-    Image("logo-transparent", bundle: nil)
-      .resizable().scaledToFit()
-      .frame(width: 400, height: 150, alignment: .center)
   }
 
   @ViewBuilder

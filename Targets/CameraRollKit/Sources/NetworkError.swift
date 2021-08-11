@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+// MARK: - NetworkError
+
 public enum NetworkError: Error, Equatable {
   case mapping(String)
   case statusCode(String)
@@ -29,8 +31,8 @@ extension MoyaError {
   var `internal`: NetworkError {
     switch self {
     case .imageMapping(let response),
-        .jsonMapping(let response),
-        .stringMapping(let response): return .mapping(response.description)
+         .jsonMapping(let response),
+         .stringMapping(let response): return .mapping(response.description)
     case .requestMapping(let string): return .mapping(string)
     case .objectMapping(let error, _): return .mapping(String(describing: error))
     case .encodableMapping(let error): return .mapping(String(describing: error))

@@ -5,9 +5,9 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
-import Foundation
 import CameraRollKit
 import Combine
+import Foundation
 
 // MARK: - HomeTab
 
@@ -41,6 +41,7 @@ class HomeViewModel: ViewModel {
   @Published var tab = HomeTab.random
   @Published var persons: [Person] = []
   @Published var hasError: Bool = false
+
   @Published var error: NetworkError? {
     didSet {
       if let error = error {

@@ -5,9 +5,9 @@
 //  Created by Volodymyr Kravchenko on 21.06.2021.
 //
 
-import SwiftUI
-import PartialSheet
 import Combine
+import PartialSheet
+import SwiftUI
 
 // MARK: - HomeView
 
@@ -21,13 +21,15 @@ struct HomeView: View {
     list
       .onAppear { viewModel.action(.fetch) }
       .alert(isPresented: $viewModel.hasError) {
-        Alert(title: Text("Error"),
-              message: viewModel.error != nil ? Text(viewModel.error!.localizedDescription) : nil,
-              dismissButton: .cancel { self.viewModel.error = nil })
+        Alert(
+          title: Text("Error"),
+          message: viewModel.error != nil ? Text(viewModel.error!.localizedDescription) : nil,
+          dismissButton: .cancel { self.viewModel.error = nil })
       }
   }
 
   // MARK: Private
+
   @EnvironmentObject private var partialSheet: PartialSheetManager
 
   @ViewBuilder private var list: some View {

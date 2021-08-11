@@ -9,6 +9,8 @@
 import Foundation
 import Moya
 
+// MARK: - PersonsTarget
+
 enum PersonsTarget {
   case fetch(limit: Int)
 
@@ -19,6 +21,8 @@ enum PersonsTarget {
   }
 }
 
+// MARK: TargetType
+
 extension PersonsTarget: TargetType {
   var baseURL: URL { URL(string: "https://randomuser.me/")! }
   var path: String { "api" }
@@ -28,8 +32,9 @@ extension PersonsTarget: TargetType {
     .requestParameters(parameters: ["results": limit], encoding: URLEncoding.queryString)
   }
   var sampleData: Data {
-    guard let url = Bundle.main.url(forResource: "persons", withExtension: "json"),
-          let data = try? Data(contentsOf: url) else { return Data() }
+    guard
+      let url = Bundle.main.url(forResource: "persons", withExtension: "json"),
+      let data = try? Data(contentsOf: url) else { return Data() }
     return data
   }
 }
