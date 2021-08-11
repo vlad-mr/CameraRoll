@@ -1,13 +1,6 @@
-# Attention ⚠️
-## Development is in progress
-## Features in development:
-1. Image loader component will be updated 
-2. API loading
-3. Lazy VGrid with photos 
-
 # <img width="23" alt="icon" src="https://user-images.githubusercontent.com/55185591/129075248-daddfb8a-e382-49e7-8c21-fdef1dec763f.png"> CameraRoll
 ![facebook_cover_photo_1](https://user-images.githubusercontent.com/55185591/129035859-00637e5f-e86a-44cf-a2dd-d94323e48aeb.png)
-                          <sub><sup>this logo was generated with https://hatchful.shopify.com</sup></sub>
+<sub><sup>this logo was generated with https://hatchful.shopify.com ⤴️</sup></sub>
 
 ## Requirements: 
 
@@ -25,10 +18,9 @@
 
 ## Dependencies:
 1. **Tuist** for project generation
-2. **SPM** for packages management
+2. **SPM** for obvious things
 3. **Moya** for network communication
-4. **Localize_Swift and SwiftDate** just in case
-<img width="653" alt="graph" src="https://user-images.githubusercontent.com/55185591/129069101-389e4546-a613-4755-bd9f-0c89ad351bf7.png">
+4. **Localize_Swift, PartialSheet and SwiftDate** just in case
 
 
 ## Project description
@@ -40,7 +32,9 @@ From an engineering standpoint, it’s a scrolling container that should display
 
 It uses https://randomuser.me/ API as a backend for pictures. 
 
-<img width="255" alt="Screenshot 2021-08-11 at 16 22 17" src="https://user-images.githubusercontent.com/55185591/129036416-a26d45bb-fd04-4713-80ef-d4000246c7ef.png">
+
+https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-9842-439bb6229039.mov
+
 
 
 ## Architecture and key technologies
@@ -51,29 +45,22 @@ It uses https://randomuser.me/ API as a backend for pictures.
   
   Or run `tuist graph` to see project graph.
   
-  ```
-  Project structure:
-  
-                +-------------+
-                |             |
-                |     App     | Contains CameraRoll App target and CameraRoll unit-test target
-                |             |
-         +------+-------------+-------+
-         |         depends on         |
-         |                            |
- +----v-----+                   +-----v-----+
- |          |                   |           |
- |   Kit    |                   |     UI    |
- |          |                   |           |
- +----------+                   +-----------+
-```
+  ![graph](https://user-images.githubusercontent.com/55185591/129115294-8cc28098-6b62-4533-b1be-8dbee079a2fc.png)
 
 
 2. **MVVM + Coordinators** for presentation layer
-4. **Swift UI and Combine** for fun and reactive development
+4. **Swift UI and Combine** for fun and reactive programming
 
 ## Thanks, you guys are awesome
 1. [Rohit Mehta](mailto:rohit.mehta@freshii.com) for sweet design ideas
 2. https://randomuser.me/ for photos
 3. https://hatchful.shopify.com for logos
 4. https://appicon.co for icons generation
+
+# Attention ⚠️
+## Development is in progress
+## Features in development:
+
+🔜 Image loader component will be updated
+
+❔ Unit tests
