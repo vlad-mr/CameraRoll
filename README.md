@@ -7,6 +7,7 @@
 
 # CameraRoll
 ![facebook_cover_photo_1](https://user-images.githubusercontent.com/55185591/129035859-00637e5f-e86a-44cf-a2dd-d94323e48aeb.png)
+                          <sub><sup>this logo was generated with https://hatchful.shopify.com</sup></sub>
 
 ## Requirements: 
 1. iOS 14+ / Swift 5.5
@@ -37,7 +38,7 @@ It uses https://randomuser.me/ API as a backend for pictures.
 
 ## Architecture and key technologies
 
-1. **Module architecture** with separate UI and BL targets
+1. **Modular architecture** with separate UI and BL targets
   ```
   Please look at Project.swift file for projects's and targets' settings
   Project structure:
