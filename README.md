@@ -5,7 +5,7 @@
 2. API loading
 3. Lazy VGrid with photos 
 
-# CameraRoll
+# <img width="23" alt="icon" src="https://user-images.githubusercontent.com/55185591/129075248-daddfb8a-e382-49e7-8c21-fdef1dec763f.png"> CameraRoll
 ![facebook_cover_photo_1](https://user-images.githubusercontent.com/55185591/129035859-00637e5f-e86a-44cf-a2dd-d94323e48aeb.png)
                           <sub><sup>this logo was generated with https://hatchful.shopify.com</sup></sub>
 
