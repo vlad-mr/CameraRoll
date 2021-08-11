@@ -37,7 +37,7 @@ struct InitialView: View {
         }
         .padding([.leading, .trailing])
       }
-      .frame(height: geometry.size.height - bottomHeight)
+      .frame(height: geometry.size.height)
       bottom
       .ignoresSafeArea(.keyboard)
       .padding([.leading, .trailing])
