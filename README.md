@@ -10,9 +10,12 @@
                           <sub><sup>this logo was generated with https://hatchful.shopify.com</sup></sub>
 
 ## Requirements: 
-1. iOS 14+ / Swift 5.5
-2. **Xcode 13 beta**
-3. Tuist https://github.com/tuist/tuist
+
+<img width="15" alt="swift" src="https://developer.apple.com/swift/images/swift-og.png">  iOS 14+ / Swift 5.5
+
+<img width="15" alt="xcode" src="https://upload.wikimedia.org/wikipedia/ru/0/0c/Xcode_icon.png">  **Xcode 13 beta**
+
+<img width="15" alt="tuist" src="https://docs.tuist.io/img/logo.svg">  Tuist https://github.com/tuist/tuist
 
 ## Build steps:
 1. Download project
@@ -23,6 +26,9 @@
 ## Dependencies:
 1. **Tuist** for project generation
 2. **Moya** for network communication
+3. **Localize_Swift and SwiftDate** just in case
+<img width="653" alt="graph" src="https://user-images.githubusercontent.com/55185591/129069101-389e4546-a613-4755-bd9f-0c89ad351bf7.png">
+
 
 ## Project description
 This is a simple pictures viewer with interface similar to native Photos app.
@@ -39,8 +45,12 @@ It uses https://randomuser.me/ API as a backend for pictures.
 ## Architecture and key technologies
 
 1. **Modular architecture** with separate UI and BL targets
+
+  Please look at [Project.swift](https://github.com/vlad-mr/CameraRoll/blob/dev/Project.swift) file for projects's and targets' settings.
+  
+  Or run `tuist graph` to see project graph.
+  
   ```
-  Please look at Project.swift file for projects's and targets' settings
   Project structure:
   
                 +-------------+
@@ -60,3 +70,9 @@ It uses https://randomuser.me/ API as a backend for pictures.
 
 2. **MVVM + Coordinators** for presentation layer
 4. **Swift UI and Combine** for fun and reactive development
+
+## Thanks, you guys are awesome
+1. [Rohit Mehta](mailto:rohit.mehta@freshii.com) for sweet design ideas
+2. https://randomuser.me/ for photos
+3. https://hatchful.shopify.com for logos
+4. https://appicon.co for icons generation
