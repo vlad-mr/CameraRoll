@@ -1,3 +1,10 @@
+# Attention ⚠️
+## Development is in progress
+## Features in development:
+1. Image loader component will be updated 
+2. API loading
+3. Lazy VGrid with photos 
+
 # CameraRoll
 ![facebook_cover_photo_1](https://user-images.githubusercontent.com/55185591/129035859-00637e5f-e86a-44cf-a2dd-d94323e48aeb.png)
 
