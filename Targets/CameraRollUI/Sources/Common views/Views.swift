@@ -30,7 +30,7 @@ enum Views {
     title: String,
     uppercased: Bool = true,
     titleColor: Color = .white,
-    color: Color = .buttonColorEnabled,
+    color: Color = .appGreen,
     action: @escaping () -> Void)
     -> some View
   {
@@ -112,24 +112,6 @@ enum Views {
     }
   }
 
-}
-
-extension Color {
-  static var buttonColorEnabled: Color {
-    Color(UIColor(red: 36/255, green: 158/255, blue: 107/255, alpha: 1))
-  }
-
-  static var buttonColorDisabled: Color {
-    buttonColorEnabled.opacity(0.4)
-  }
-
-  static var infoTextColor: Color {
-    Color(UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1))
-  }
-
-  static var errorColor: Color {
-    Color(UIColor(red: 0.827, green: 0.11, blue: 0.11, alpha: 1))
-  }
 }
 
 extension URL {

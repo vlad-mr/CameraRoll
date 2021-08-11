@@ -17,7 +17,7 @@ struct TabBarCoordinatorView: View {
     NavigationView {
       TabView(selection: $coordinator.tab) {
         HomeCoordinatorView(coordinator: coordinator.homeCoordinator)
-          .tabItem { Label("All".local, systemImage: "rectangle.grid.3x2.fill") }
+          .tabItem { Label("All".local, systemImage: "rectangle.grid.2x2.fill") }
           .tag(Tab.all)
         TabCoordinatorView(coordinator: coordinator.albumsCoordinator)
           .tabItem { Label("Albums".local, systemImage: "rectangle.grid.1x2.fill") }
@@ -26,6 +26,7 @@ struct TabBarCoordinatorView: View {
           .tabItem { Label("Search".local, image: "search") }
           .tag(Tab.search)
       }
+      .accentColor(.appGreen)
       .navigationBarItems(leading: Views.logo)
       .navigationBarTitleDisplayMode(.inline)
     }

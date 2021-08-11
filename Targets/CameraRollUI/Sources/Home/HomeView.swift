@@ -30,20 +30,6 @@ struct HomeView: View {
   // MARK: Private
   @EnvironmentObject private var partialSheet: PartialSheetManager
 
-  @ViewBuilder private var picker: some View {
-    Picker(selection: $viewModel.tab, label: Text("")) {
-      Text("Recents".local).tag(HomeTab.recentes)
-      Text("Favourites".local).tag(HomeTab.favourites)
-    }
-    .pickerStyle(SegmentedPickerStyle())
-    .frame(width: 200, height: 30, alignment: .leading)
-    Spacer(minLength: 15)
-  }
-
-  @ViewBuilder private var errorView: some View {
-    Views.error(viewModel.error?.localizedDescription)
-  }
-
   @ViewBuilder private var list: some View {
     let columns = [GridItem.flexible, .flexible]
     ScrollView(.vertical, showsIndicators: false) {
@@ -63,13 +49,28 @@ struct HomeView: View {
             }
           }
           .padding()
-          .foregroundColor(.black)
+          .frame(maxWidth: .infinity)
           .background(RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(Color.white)
+            .foregroundColor(.appGreenLight)
             .shadow(radius: 2, x: 0, y: 2)
           )
         }
-      }
+      }.padding(8)
     }
+  }
+
+  @ViewBuilder private var picker: some View {
+    Picker(selection: $viewModel.tab, label: Text("")) {
+      Text("Random".local).tag(HomeTab.random)
+      Text("Favourites".local).tag(HomeTab.favourites)
+    }
+    .pickerStyle(SegmentedPickerStyle())
+    .foregroundColor(.appGreen)
+    .frame(width: 200, height: 30, alignment: .leading)
+    Spacer(minLength: 15)
+  }
+
+  @ViewBuilder private var errorView: some View {
+    Views.error(viewModel.error?.localizedDescription)
   }
 }

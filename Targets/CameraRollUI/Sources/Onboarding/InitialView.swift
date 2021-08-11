@@ -31,7 +31,7 @@ struct InitialView: View {
           Spacer(minLength: 30)
           Text("Welcome, have fun!")
             .font(.poppinsBold(18))
-            .foregroundColor(.buttonColorEnabled)
+            .foregroundColor(.appGreen)
             .frame(maxWidth: .infinity)
             .multilineTextAlignment(.center)
         }

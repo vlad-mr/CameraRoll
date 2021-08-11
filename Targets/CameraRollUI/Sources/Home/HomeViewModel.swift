@@ -12,7 +12,7 @@ import Combine
 // MARK: - HomeTab
 
 enum HomeTab: Equatable {
-  case recentes
+  case random
   case favourites
 }
 
@@ -38,7 +38,7 @@ class HomeViewModel: ViewModel {
 
   // MARK: Internal
 
-  @Published var tab = HomeTab.recentes
+  @Published var tab = HomeTab.random
   @Published var persons: [Person] = []
   @Published var hasError: Bool = false
   @Published var error: NetworkError? {
