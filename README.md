@@ -32,7 +32,9 @@ From an engineering standpoint, it’s a scrolling container that should display
 
 It uses https://randomuser.me/ API as a backend for pictures. 
 
-https://user-images.githubusercontent.com/55185591/129115116-72c8bcad-f67c-4800-a1f4-c0a12f04b0f2.mov
+
+https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-9842-439bb6229039.mov
+
 
 
 ## Architecture and key technologies
