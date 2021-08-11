@@ -5,24 +5,29 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct CustomTextField: UIViewRepresentable {
 
   class Coordinator: NSObject, UITextFieldDelegate {
-    @Binding var text: String
-    @Binding var error: String
-    @Binding var isFocused: Bool
 
-    var didBecomeFirstResponder = false
-    var onFocusChange: Optional<(Bool) -> Void> = nil
+    // MARK: Lifecycle
 
     init(text: Binding<String>, error: Binding<String>, isFocused: Binding<Bool>) {
       _text = text
       _error = error
       _isFocused = isFocused
     }
+
+    // MARK: Internal
+
+    @Binding var text: String
+    @Binding var error: String
+    @Binding var isFocused: Bool
+
+    var didBecomeFirstResponder = false
+    var onFocusChange: ((Bool) -> Void)? = nil
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
       text = textField.text ?? ""
@@ -52,7 +57,7 @@ struct CustomTextField: UIViewRepresentable {
   var isSecure: Bool = false
   var isFocused: Bool = false
   @Binding var isFocusedBindable: Bool
-  var onFocusChange: Optional<(Bool) -> Void> = nil
+  var onFocusChange: ((Bool) -> Void)? = nil
 
   func makeUIView(context: UIViewRepresentableContext<CustomTextField>) -> UITextField {
     let textField = UITextField(frame: .zero)
@@ -75,12 +80,12 @@ struct CustomTextField: UIViewRepresentable {
     uiView.autocorrectionType = .no
     if let font = placeholderFont, let color = placeholderColor {
       uiView.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
-        .font: font, .foregroundColor: color
+        .font: font, .foregroundColor: color,
       ])
     } else {
       uiView.placeholder = placeholder
     }
-    if (isFocusedBindable || isFocused) && !context.coordinator.didBecomeFirstResponder  {
+    if (isFocusedBindable || isFocused) && !context.coordinator.didBecomeFirstResponder {
       uiView.becomeFirstResponder()
       context.coordinator.didBecomeFirstResponder = true
     }

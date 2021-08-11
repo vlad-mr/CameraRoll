@@ -17,8 +17,22 @@ struct HomeView: View {
 
   var body: some View {
     VStack {
+      Spacer()
       Text("Home")
+      Spacer()
       picker
+      Spacer()
+      if let url = URL(string: "string") {
+        AsyncImage(
+          url: url,
+          placeholder: { Text("Loading ...") },
+          image: { Image(uiImage: $0)
+            .resizable()
+          })
+          .aspectRatio(contentMode: .fit)
+      } else {
+        Image("brand")
+      }
     }
   }
 

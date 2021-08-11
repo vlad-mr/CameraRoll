@@ -1,6 +1,6 @@
+import Foundation
 import ProjectDescription
 import ProjectDescriptionHelpers
-import Foundation
 
 /*
                 +-------------+
@@ -42,39 +42,45 @@ let infoPlist: [String: InfoPlist.Value] = [
     .string("Poppins-SemiBold.ttf"),
     .string("Poppins-SemiBoldItalic.ttf"),
     .string("Poppins-Thin.ttf"),
-    .string("Poppins-ThinItalic.ttf")
-  ])
+    .string("Poppins-ThinItalic.ttf"),
+  ]),
 ]
 let bundleId = "vladmr.pm.me.CameraRoll"
 let deploymentTarget = DeploymentTarget.iOS(targetVersion: "14.0", devices: .iphone)
-let kit = Project.makeFrameworkTargets(name: "CameraRollKit",
-                                       platform: .iOS,
-                                       appBundleId: bundleId,
-                                       deploymentTarget: deploymentTarget)
-let ui = Project.makeFrameworkTargets(name: "CameraRollUI",
-                                      platform: .iOS,
-                                      appBundleId: bundleId,
-                                      deploymentTarget: deploymentTarget,
-                                      dependencies: [
-                                       .package(product: "SwiftDateStatic"),
-                                       .package(product: "Localize_Swift")
-                                      ])
-let app = Project.makeAppTargets(name: "CameraRoll",
-                                 platform: .iOS,
-                                 infoPlist: infoPlist,
-                                 bundleId: bundleId,
-                                 deploymentTarget: deploymentTarget,
-                                 dependencies: [
-                                  .target(name: "CameraRollKit"),
-                                  .target(name: "CameraRollUI")
-                                 ])
+let kit = Project.makeFrameworkTargets(
+  name: "CameraRollKit",
+  platform: .iOS,
+  appBundleId: bundleId,
+  deploymentTarget: deploymentTarget)
+let ui = Project.makeFrameworkTargets(
+  name: "CameraRollUI",
+  platform: .iOS,
+  appBundleId: bundleId,
+  deploymentTarget: deploymentTarget,
+  dependencies: [
+    .package(product: "SwiftDateStatic"),
+    .package(product: "Localize_Swift"),
+  ])
+let app = Project.makeAppTargets(
+  name: "CameraRoll",
+  platform: .iOS,
+  infoPlist: infoPlist,
+  bundleId: bundleId,
+  deploymentTarget: deploymentTarget,
+  dependencies: [
+    .target(name: "CameraRollKit"),
+    .target(name: "CameraRollUI"),
+  ])
 
-let project = Project(name: "Camera Roll",
-                      organizationName: "vladmr@pm.me",
-                      packages: [
-                        .remote(url: "https://github.com/malcommac/SwiftDate.git",
-                                requirement: .upToNextMajor(from: "6.0.0")),
-                        .remote(url: "https://github.com/marmelroy/Localize-Swift.git",
-                                requirement: .upToNextMajor(from: "3.2.0"))
-                      ],
-                      targets: app + kit + ui)
+let project = Project(
+  name: "Camera Roll",
+  organizationName: "vladmr@pm.me",
+  packages: [
+    .remote(
+      url: "https://github.com/malcommac/SwiftDate.git",
+      requirement: .upToNextMajor(from: "6.0.0")),
+    .remote(
+      url: "https://github.com/marmelroy/Localize-Swift.git",
+      requirement: .upToNextMajor(from: "3.2.0")),
+  ],
+  targets: app + kit + ui)

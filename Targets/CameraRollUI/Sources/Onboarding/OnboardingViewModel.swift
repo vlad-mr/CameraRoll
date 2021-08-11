@@ -5,9 +5,9 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
+import CameraRollKit
 import Combine
 import Foundation
-import CameraRollKit
 
 // MARK: - OnboardingViewModel
 

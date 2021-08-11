@@ -33,6 +33,8 @@ class TabBarCoordinator: Coordinator {
   @Published var albumsCoordinator: TabCoordinator!
   @Published var searchCoordinator: TabCoordinator!
 
+  unowned let parent: AppCoordinator
+
   func clearState() {
     homeCoordinator = HomeCoordinator(parent: self)
     albumsCoordinator = TabCoordinator(parent: self, name: "Albums")
@@ -40,5 +42,4 @@ class TabBarCoordinator: Coordinator {
     tab = .all
   }
 
-  unowned let parent: AppCoordinator
 }

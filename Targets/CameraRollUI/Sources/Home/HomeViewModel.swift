@@ -14,6 +14,8 @@ enum HomeTab {
   case favourites
 }
 
+// MARK: - HomeViewAction
+
 enum HomeViewAction {
 
 }

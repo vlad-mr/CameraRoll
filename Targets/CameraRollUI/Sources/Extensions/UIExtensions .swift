@@ -80,28 +80,30 @@ extension NavigationLink {
   }
 }
 
+// MARK: - ImageCacheKey
+
 struct ImageCacheKey: EnvironmentKey {
-    static let defaultValue: ImageCache = TemporaryImageCache()
+  static let defaultValue: ImageCache = TemporaryImageCache()
 }
 
 extension EnvironmentValues {
-    var imageCache: ImageCache {
-        get { self[ImageCacheKey.self] }
-        set { self[ImageCacheKey.self] = newValue }
-    }
+  var imageCache: ImageCache {
+    get { self[ImageCacheKey.self] }
+    set { self[ImageCacheKey.self] = newValue }
+  }
 }
 
 extension UIWindow {
   static var key: UIWindow? {
     Array(UIApplication.shared.connectedScenes)
-            .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first(where: { $0.isKeyWindow })
+      .compactMap { $0 as? UIWindowScene }
+      .flatMap { $0.windows }
+      .first(where: { $0.isKeyWindow })
   }
 }
 
 extension UIApplication {
-    func endEditing() {
-        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
+  func endEditing() {
+    sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+  }
 }

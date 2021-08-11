@@ -20,8 +20,8 @@ public protocol ViewModel: ObservableObject, Identifiable {
   func navigate(_ action: NavigationAction)
 }
 
-public extension ViewModel {
-  func navigate(_: NavigationAction) {
+extension ViewModel {
+  public func navigate(_: NavigationAction) {
     print("No action for this screen")
   }
 }

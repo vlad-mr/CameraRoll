@@ -5,8 +5,8 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
-import Foundation
 import CameraRollKit
+import Foundation
 
 // MARK: - OnboardingScene
 
@@ -23,7 +23,7 @@ class OnboardingCoordinator: Coordinator {
 
   init(parent: AppCoordinator) {
     self.parent = parent
-    self.service = ImageService()
+    service = ImageService()
     onboardingViewModel = OnboardingViewModel(coordinator: self, service: service)
   }
 
@@ -43,6 +43,7 @@ class OnboardingCoordinator: Coordinator {
   }
 
   // MARK: Private
+
   private let service: ImageService
   private unowned let parent: AppCoordinator
 

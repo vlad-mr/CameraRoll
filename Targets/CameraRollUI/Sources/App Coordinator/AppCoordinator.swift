@@ -25,7 +25,19 @@ public class AppCoordinator: Coordinator {
     tabBarCoordinator = TabBarCoordinator(parent: self)
   }
 
+  // MARK: Public
+
+  public func show(_ scene: AppScene) {
+    switch scene {
+    case .home: currentScene = .home
+    case .onboarding: currentScene = .onboarding
+    }
+  }
+
   // MARK: Internal
+
+  @Published var onboardingCoordinator: OnboardingCoordinator!
+  @Published var tabBarCoordinator: TabBarCoordinator!
 
   @Published var currentScene = AppScene.onboarding {
     willSet {
@@ -33,15 +45,6 @@ public class AppCoordinator: Coordinator {
       case .onboarding: onboardingCoordinator.clearState()
       case .home: tabBarCoordinator.clearState()
       }
-    }
-  }
-  @Published var onboardingCoordinator: OnboardingCoordinator!
-  @Published var tabBarCoordinator: TabBarCoordinator!
-
-  public func show(_ scene: AppScene) {
-    switch scene {
-    case .home: currentScene = .home
-    case .onboarding: currentScene = .onboarding
     }
   }
 }

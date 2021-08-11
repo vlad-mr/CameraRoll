@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TabBarCoordinatorView: View {
+
+  // MARK: Internal
+
   @ObservedObject var coordinator: TabBarCoordinator
 
   var body: some View {
@@ -27,6 +30,8 @@ struct TabBarCoordinatorView: View {
       .navigationBarTitleDisplayMode(.inline)
     }
   }
+
+  // MARK: Private
 
   @ViewBuilder private var logo: some View {
     Image("logo", bundle: nil).resizable().scaledToFit()

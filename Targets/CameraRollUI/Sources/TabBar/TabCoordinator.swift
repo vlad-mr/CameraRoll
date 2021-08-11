@@ -18,6 +18,8 @@ class TabCoordinator: Coordinator {
     self.name = name
   }
 
+  // MARK: Internal
+
   @Published var name: String
 
   // MARK: Private

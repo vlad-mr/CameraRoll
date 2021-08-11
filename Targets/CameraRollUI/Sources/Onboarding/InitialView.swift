@@ -5,9 +5,9 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
+import Combine
 import Localize_Swift
 import SwiftUI
-import Combine
 
 // MARK: - InitialViewAction
 
@@ -39,9 +39,9 @@ struct InitialView: View {
       }
       .frame(height: geometry.size.height)
       bottom
-      .ignoresSafeArea(.keyboard)
-      .padding([.leading, .trailing])
-      .offset(y: geometry.size.height - bottomHeight)
+        .ignoresSafeArea(.keyboard)
+        .padding([.leading, .trailing])
+        .offset(y: geometry.size.height - bottomHeight)
     }
     .padding(20)
     .navigationBarItems(leading: logo)
