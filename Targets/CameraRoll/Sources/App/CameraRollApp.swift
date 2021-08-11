@@ -7,6 +7,7 @@
 
 import CameraRollUI
 import SwiftUI
+import PartialSheet
 
 // MARK: - CameraRollApp
 
@@ -14,10 +15,13 @@ import SwiftUI
 struct CameraRollApp: App {
   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   @StateObject var coordinator = AppCoordinator()
+  private let sheetManager = PartialSheetManager()
 
   var body: some Scene {
     WindowGroup {
       AppCoordinatorView(coordinator: coordinator)
+        .preferredColorScheme(.light)
+        .environmentObject(sheetManager)
     }
   }
 }

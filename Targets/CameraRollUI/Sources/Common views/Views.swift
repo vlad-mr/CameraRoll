@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - OnboardingViews
 
-enum OnboardingViews {
+enum Views {
   @ViewBuilder
   static var links: some View {
     HStack(alignment: .center, spacing: 2) {
@@ -90,6 +90,19 @@ enum OnboardingViews {
   static func skip(action: @escaping () -> Void) -> some View {
     Button("Skip".local, action: action)
       .foregroundColor(.black)
+  }
+
+  @ViewBuilder
+  static func error(_ message: String?) -> some View {
+    if let message = message {
+      Text(message)
+        .padding([.top, .bottom], 50)
+        .padding([.leading, .trailing], 20)
+        .multilineTextAlignment(.center)
+        .foregroundColor(.errorColor)
+    } else {
+      EmptyView()
+    }
   }
 
 }

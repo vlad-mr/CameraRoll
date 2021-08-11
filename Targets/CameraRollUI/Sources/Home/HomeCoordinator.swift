@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CameraRollKit
 
 // MARK: - HomeScene
 
@@ -22,7 +23,8 @@ class HomeCoordinator: Coordinator {
 
   init(parent: TabBarCoordinator) {
     self.parent = parent
-    homeViewModel = HomeViewModel(coordinator: self)
+    self.imageService = PersonsService()
+    homeViewModel = HomeViewModel(coordinator: self, service: imageService)
   }
 
   // MARK: Internal
@@ -39,4 +41,5 @@ class HomeCoordinator: Coordinator {
   // MARK: Private
 
   private unowned let parent: TabBarCoordinator
+  private let imageService: PersonsService
 }

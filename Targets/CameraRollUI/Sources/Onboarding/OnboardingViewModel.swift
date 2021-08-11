@@ -15,7 +15,7 @@ class OnboardingViewModel: ViewModel {
 
   // MARK: Lifecycle
 
-  init(coordinator: OnboardingCoordinator, service: ImageService) {
+  init(coordinator: OnboardingCoordinator, service: PersonsService) {
     self.coordinator = coordinator
     self.service = service
   }
@@ -40,5 +40,5 @@ class OnboardingViewModel: ViewModel {
 
   // MARK: Private
 
-  private let service: ImageService
+  private let service: PersonsService
 }

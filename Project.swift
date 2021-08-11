@@ -51,16 +51,21 @@ let kit = Project.makeFrameworkTargets(
   name: "CameraRollKit",
   platform: .iOS,
   appBundleId: bundleId,
-  deploymentTarget: deploymentTarget)
+  deploymentTarget: deploymentTarget,
+  dependencies: [
+    .package(product: "Moya"),
+    .package(product: "CombineMoya")
+  ])
 let uiTarget = Project.makeFrameworkTargets(
   name: "CameraRollUI",
   platform: .iOS,
   appBundleId: bundleId,
   deploymentTarget: deploymentTarget,
   dependencies: [
+    .target(name: "CameraRollKit"),
     .package(product: "SwiftDateStatic"),
     .package(product: "Localize_Swift"),
-    .package(product: "Moya"),
+    .package(product: "PartialSheet")
   ])
 let app = Project.makeAppTargets(
   name: "CameraRoll",
@@ -68,7 +73,6 @@ let app = Project.makeAppTargets(
   bundleId: bundleId,
   deploymentTarget: deploymentTarget,
   dependencies: [
-    .target(name: "CameraRollKit"),
     .target(name: "CameraRollUI"),
   ])
 
@@ -84,6 +88,8 @@ let project = Project(
       requirement: .upToNextMajor(from: "3.2.0")),
     .remote(
       url: "https://github.com/Moya/Moya",
-      requirement: .upToNextMajor(from: "14.0.0")),
+      requirement: .branch("development")),
+    .remote(url: "https://github.com/AndreaMiotto/PartialSheet",
+            requirement: .upToNextMajor(from: "2.0.0"))
   ],
   targets: app + kit + uiTarget)

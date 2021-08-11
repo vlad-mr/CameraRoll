@@ -74,10 +74,10 @@ struct InitialView: View {
 
   @ViewBuilder private var bottom: some View {
     VStack(alignment: .leading) {
-      OnboardingViews.button(title: "Continue".local) {
+      Views.button(title: "Continue".local) {
         viewModel.action(.skip)
       }
-      OnboardingViews.links.padding(.bottom, 30)
+      Views.links.padding(.bottom, 30)
     }
   }
 }
