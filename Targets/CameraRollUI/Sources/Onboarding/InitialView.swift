@@ -65,7 +65,7 @@ struct InitialView: View {
 
   @ViewBuilder private var tabView: some View {
     TabView {
-      ForEach(viewModel.images, id: \.self) { string in
+      ForEach(viewModel.images, id: \.self) { _ in
         Image("brand").resizable().scaledToFit().cornerRadius(5)
       }
     }

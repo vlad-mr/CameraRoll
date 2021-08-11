@@ -27,7 +27,7 @@ struct CustomTextField: UIViewRepresentable {
     @Binding var isFocused: Bool
 
     var didBecomeFirstResponder = false
-    var onFocusChange: ((Bool) -> Void)? = nil
+    var onFocusChange: ((Bool) -> Void)?
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
       text = textField.text ?? ""
@@ -57,7 +57,7 @@ struct CustomTextField: UIViewRepresentable {
   var isSecure: Bool = false
   var isFocused: Bool = false
   @Binding var isFocusedBindable: Bool
-  var onFocusChange: ((Bool) -> Void)? = nil
+  var onFocusChange: ((Bool) -> Void)?
 
   func makeUIView(context: UIViewRepresentableContext<CustomTextField>) -> UITextField {
     let textField = UITextField(frame: .zero)

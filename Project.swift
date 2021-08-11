@@ -52,7 +52,7 @@ let kit = Project.makeFrameworkTargets(
   platform: .iOS,
   appBundleId: bundleId,
   deploymentTarget: deploymentTarget)
-let ui = Project.makeFrameworkTargets(
+let uiTarget = Project.makeFrameworkTargets(
   name: "CameraRollUI",
   platform: .iOS,
   appBundleId: bundleId,
@@ -63,7 +63,6 @@ let ui = Project.makeFrameworkTargets(
   ])
 let app = Project.makeAppTargets(
   name: "CameraRoll",
-  platform: .iOS,
   infoPlist: infoPlist,
   bundleId: bundleId,
   deploymentTarget: deploymentTarget,
@@ -83,4 +82,4 @@ let project = Project(
       url: "https://github.com/marmelroy/Localize-Swift.git",
       requirement: .upToNextMajor(from: "3.2.0")),
   ],
-  targets: app + kit + ui)
+  targets: app + kit + uiTarget)

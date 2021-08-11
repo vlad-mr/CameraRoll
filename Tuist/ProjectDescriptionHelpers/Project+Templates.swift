@@ -17,7 +17,6 @@ extension Project {
   {
     var targets = makeAppTargets(
       name: name,
-      platform: platform,
       infoPlist: [:],
       bundleId: bundleId,
       deploymentTarget: deploymentTarget,
@@ -69,17 +68,14 @@ extension Project {
   /// Helper function to create the application target and the unit test target.
   public static func makeAppTargets(
     name: String,
-    platform: Platform,
     infoPlist: [String: InfoPlist.Value],
     bundleId: String,
     deploymentTarget: DeploymentTarget,
     dependencies: [TargetDependency]) -> [Target]
   {
-    let platform: Platform = platform
-
     let mainTarget = Target(
       name: name,
-      platform: platform,
+      platform: .iOS,
       product: .app,
       bundleId: bundleId,
       deploymentTarget: deploymentTarget,
@@ -90,7 +86,7 @@ extension Project {
 
     let testTarget = Target(
       name: "\(name)Tests",
-      platform: platform,
+      platform: .iOS,
       product: .unitTests,
       bundleId: "\(bundleId).\(name)Tests",
       infoPlist: .default,

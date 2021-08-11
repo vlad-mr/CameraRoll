@@ -20,8 +20,8 @@ struct FocusedTextField: View {
   var placeholderColor: UIColor
   var focusedColor: UIColor = .clear
   var isSecure: Bool = false
-  var onFocusChange: ((Bool) -> Void)? = nil
-  var onTextChange: ((String) -> Void)? = nil
+  var onFocusChange: ((Bool) -> Void)?
+  var onTextChange: ((String) -> Void)?
 
   var body: some View {
     VStack(alignment: .leading, spacing: 12) {
@@ -60,4 +60,3 @@ struct FocusedTextField: View {
     }
   }
 }
-

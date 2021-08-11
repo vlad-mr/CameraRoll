@@ -35,8 +35,7 @@ class HomeViewModel: ViewModel {
   @Published var tab = HomeTab.recentes
 
   func action(_ action: HomeViewAction) {
-    switch action {
-    }
+//    switch action { }
   }
 
   // MARK: Private
