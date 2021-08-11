@@ -25,8 +25,9 @@
 
 ## Dependencies:
 1. **Tuist** for project generation
-2. **Moya** for network communication
-3. **Localize_Swift and SwiftDate** just in case
+2. **SPM** for packages management
+3. **Moya** for network communication
+4. **Localize_Swift and SwiftDate** just in case
 <img width="653" alt="graph" src="https://user-images.githubusercontent.com/55185591/129069101-389e4546-a613-4755-bd9f-0c89ad351bf7.png">
 
 
@@ -46,7 +47,7 @@ It uses https://randomuser.me/ API as a backend for pictures.
 
 1. **Modular architecture** with separate UI and BL targets
 
-  Please look at [Project.swift](https://github.com/vlad-mr/CameraRoll/blob/dev/Project.swift) file for projects's and targets' settings.
+  Please look at [Project.swift](https://github.com/vlad-mr/CameraRoll/blob/dev/Project.swift) file for project's and targets' settings.
   
   Or run `tuist graph` to see project graph.
   
