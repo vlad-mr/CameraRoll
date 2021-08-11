@@ -16,7 +16,8 @@ public final class PersonsService {
 
   public func fetchPersons(limit: Int = 50) -> AnyPublisher<[Person], NetworkError> {
     provider.requestPublisher(.fetch(limit: limit), callbackQueue: .main)
-      .map([Person].self)
+      .map(PersonsFetchResponce.self)
+      .map { $0.results }
       .mapInternalError()
   }
 }

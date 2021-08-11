@@ -78,6 +78,13 @@ enum Views {
   }
 
   @ViewBuilder
+  static var logo: some View {
+    Image("logo-transparent", bundle: nil)
+      .resizable().scaledToFit()
+      .frame(width: 400, height: 150, alignment: .center)
+  }
+
+  @ViewBuilder
   static func back(action: @escaping () -> Void) -> some View {
     Button(action: action) {
       Image(systemName: "chevron.left")

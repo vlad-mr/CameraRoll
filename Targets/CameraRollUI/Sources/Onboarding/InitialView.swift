@@ -25,7 +25,7 @@ struct InitialView: View {
 
   var body: some View {
     GeometryReader { geometry in
-      ScrollView {
+      ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
           pageView
           Spacer(minLength: 30)
@@ -37,29 +37,23 @@ struct InitialView: View {
         }
         .padding([.leading, .trailing])
       }
-      .frame(height: geometry.size.height)
       bottom
         .ignoresSafeArea(.keyboard)
         .padding([.leading, .trailing])
         .offset(y: geometry.size.height - bottomHeight)
     }
-    .padding(20)
-    .navigationBarItems(leading: logo)
+    .navigationBarItems(leading: Views.logo)
     .navigationBarTitleDisplayMode(.inline)
   }
 
   // MARK: Private
 
-  private var bottomHeight: CGFloat { 70 }
-
-  @ViewBuilder private var logo: some View {
-    Image("logo", bundle: nil).resizable().scaledToFit()
-  }
+  private var bottomHeight: CGFloat { 90 }
 
   @ViewBuilder private var pageView: some View {
     tabView
       .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
     Spacer(minLength: 30)
   }
 

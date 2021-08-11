@@ -23,7 +23,7 @@ struct HomeView: View {
       .alert(isPresented: $viewModel.hasError) {
         Alert(title: Text("Error"),
               message: viewModel.error != nil ? Text(viewModel.error!.localizedDescription) : nil,
-              dismissButton: .cancel())
+              dismissButton: .cancel { self.viewModel.error = nil })
       }
   }
 
@@ -45,7 +45,7 @@ struct HomeView: View {
   }
 
   @ViewBuilder private var list: some View {
-    let columns = [GridItem(.flexible())]
+    let columns = [GridItem.flexible, .flexible]
     ScrollView(.vertical, showsIndicators: false) {
       HStack {
         Spacer()

@@ -11,7 +11,6 @@ import Foundation
 public struct Person: Codable {
   public let gender: String
   public let name: Name
-  public let location: Location
   public let email: String
   public let phone: String
   public let picture: Picture
@@ -21,13 +20,6 @@ public struct Person: Codable {
     public let title: String?
     public let first: String
     public let last: String
-  }
-
-  public struct Location: Codable {
-    public let city: String
-    public let state: String
-    public let country: String
-    public let postcode: String
   }
 
   public struct Picture: Codable {

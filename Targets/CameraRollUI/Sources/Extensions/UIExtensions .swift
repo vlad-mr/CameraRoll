@@ -60,6 +60,10 @@ extension View {
   }
 }
 
+extension GridItem {
+  static var flexible: GridItem { GridItem(.flexible()) }
+}
+
 extension NavigationLink {
   init<T: Identifiable, D: View>(
     item: Binding<T?>,

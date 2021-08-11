@@ -26,14 +26,8 @@ struct TabBarCoordinatorView: View {
           .tabItem { Label("Search".local, image: "search") }
           .tag(Tab.search)
       }
-      .navigationBarItems(leading: logo)
+      .navigationBarItems(leading: Views.logo)
       .navigationBarTitleDisplayMode(.inline)
     }
-  }
-
-  // MARK: Private
-
-  @ViewBuilder private var logo: some View {
-    Image("logo", bundle: nil).resizable().scaledToFit()
   }
 }

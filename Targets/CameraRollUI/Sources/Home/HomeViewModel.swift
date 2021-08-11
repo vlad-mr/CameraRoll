@@ -67,7 +67,7 @@ class HomeViewModel: ViewModel {
 
   private func fetchPersons() {
     cleanState()
-    fetchToken = service.fetchPersons()
+    fetchToken = service.fetchPersons(limit: 200)
       .sink { [weak self] completion in
         self?.fetchToken = nil
         switch completion {
