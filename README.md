@@ -60,4 +60,7 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 # Attention ⚠️
 ## Development is in progress
 ## Features in development:
-🔜 Image loader component will be updated 
+
+🔜 Image loader component will be updated
+
+❔ Unit tests
