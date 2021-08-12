@@ -3,18 +3,18 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 /*
-                +-------------+
-                |             |
-                |     App     | Contains CameraRoll App target and CameraRoll unit-test target
-                |             |
-         +------+-------------+-------+
-         |         depends on         |
-         |                            |
- +----v-----+                   +-----v-----+
- |          |                   |           |
- |   Kit    |                   |     UI    |
- |          |                   |           |
- +----------+                   +-----------+
+  +-------------+
+  |             |
+  |     App     | Contains CameraRoll App target and CameraRoll unit-test target
+  |             |
+  +-------------+-------+
+              depends on|
+                        |
+                  +-----v-----+           +----------+
+                  |           |           |          |
+                  |     UI    |----------->   Kit    |
+                  |           |           |          |
+                  +-----------+           +----------+
 
  */
 
