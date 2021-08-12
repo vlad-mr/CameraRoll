@@ -61,6 +61,12 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 ## Development is in progress
 ## Features in development:
 
-🔜 Image loader component will be updated
+🔜 Person details
+
+🔜 Favourites
+
+🔜 Albums
+
+🔜 Search favourites by name, email, etc.
 
 ❔ Unit tests
