@@ -9,13 +9,13 @@ import UIKit
 
 // MARK: - ImageCache
 
-protocol ImageCache {
+public protocol ImageCache {
   subscript(_ url: URL) -> UIImage? { get set }
 }
 
 // MARK: - TemporaryImageCache
 
-struct TemporaryImageCache: ImageCache {
+public struct TemporaryImageCache: ImageCache {
   private let cache: NSCache<NSURL, UIImage> = {
     let cache = NSCache<NSURL, UIImage>()
     cache.countLimit = 100
@@ -23,7 +23,7 @@ struct TemporaryImageCache: ImageCache {
     return cache
   }()
 
-  subscript(_ key: URL) -> UIImage? {
+  public subscript(_ key: URL) -> UIImage? {
     get { cache.object(forKey: key as NSURL) }
     set { newValue == nil
       ? cache.removeObject(forKey: key as NSURL)

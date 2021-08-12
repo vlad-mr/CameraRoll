@@ -5,6 +5,7 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
+import CameraRollKit
 import Foundation
 import Localize_Swift
 import SwiftUI
@@ -84,19 +85,6 @@ extension NavigationLink {
   }
 }
 
-// MARK: - ImageCacheKey
-
-struct ImageCacheKey: EnvironmentKey {
-  static let defaultValue: ImageCache = TemporaryImageCache()
-}
-
-extension EnvironmentValues {
-  var imageCache: ImageCache {
-    get { self[ImageCacheKey.self] }
-    set { self[ImageCacheKey.self] = newValue }
-  }
-}
-
 extension UIWindow {
   static var key: UIWindow? {
     Array(UIApplication.shared.connectedScenes)
@@ -110,4 +98,17 @@ extension UIApplication {
   func endEditing() {
     sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
   }
+}
+
+extension EnvironmentValues {
+  var imageCache: ImageCache {
+    get { self[ImageCacheKey.self] }
+    set { self[ImageCacheKey.self] = newValue }
+  }
+}
+
+// MARK: - ImageCacheKey
+
+struct ImageCacheKey: EnvironmentKey {
+  static let defaultValue: ImageCache = TemporaryImageCache()
 }

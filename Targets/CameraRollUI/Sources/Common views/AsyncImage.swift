@@ -5,6 +5,7 @@
 //  Created by Volodymyr Kravchenko on 11.08.2021.
 //
 
+import CameraRollKit
 import SwiftUI
 
 struct AsyncImage<Placeholder: View>: View {
@@ -24,8 +25,7 @@ struct AsyncImage<Placeholder: View>: View {
   // MARK: Internal
 
   var body: some View {
-    content
-      .onAppear(perform: loader.load)
+    content.onAppear(perform: loader.load)
   }
 
   // MARK: Private

@@ -8,11 +8,13 @@
 import Combine
 import UIKit
 
-class ImageLoader: ObservableObject {
+// MARK: - ImageLoader
+
+public class ImageLoader: ObservableObject {
 
   // MARK: Lifecycle
 
-  init(url: URL, cache: ImageCache? = nil) {
+  public init(url: URL, cache: ImageCache? = nil) {
     self.url = url
     self.cache = cache
   }
@@ -21,21 +23,19 @@ class ImageLoader: ObservableObject {
     cancel()
   }
 
-  // MARK: Internal
+  // MARK: Public
 
-  @Published var image: UIImage?
+  @Published public var image: UIImage?
 
-  private(set) var isLoading = false
+  public private(set) var isLoading = false
 
-  func load() {
+  public func load() {
     guard !isLoading else { return }
-
     if let image = cache?[url] {
       self.image = image
       return
     }
-
-    cancellable = URLSession.shared.dataTaskPublisher(for: url)
+    cancellable = sharedSession.dataTaskPublisher(for: url)
       .map { UIImage(data: $0.data) }
       .replaceError(with: nil)
       .handleEvents(
@@ -48,7 +48,7 @@ class ImageLoader: ObservableObject {
       .sink { [weak self] in self?.image = $0 }
   }
 
-  func cancel() {
+  public func cancel() {
     cancellable?.cancel()
   }
 
@@ -72,3 +72,12 @@ class ImageLoader: ObservableObject {
     image.map { cache?[url] = $0 }
   }
 }
+
+/// Ephemeral URL session object shared between instances of ImageLoader.
+///
+/// As we have our own cache, use of ephemeral URL session will increase performance because it doesn't store caches.
+private let sharedSession: URLSession = {
+  let configuration = URLSessionConfiguration.ephemeral
+  configuration.isDiscretionary = false
+  return URLSession(configuration: configuration)
+}()
