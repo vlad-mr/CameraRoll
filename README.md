@@ -12,9 +12,11 @@
 
 ## Build steps:
 1. Download project
-2. Open folder in terminal
+2. Open folder in **Terminal**
 3. Run `tuist generate --open`
-4. Build and have fun
+4. Select your **dev team (for all targets)** before building for Device, no additional work for Simulator
+5. Build with **Xcode** or `tuist build` and have fun
+6. <sub>If you see issue with file permisions run `chmod +x swiftlint.sh`</sub>
 
 ## Dependencies:
 1. **Tuist** for project generation
@@ -50,6 +52,7 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 
 2. **MVVM + Coordinators** for presentation layer
 4. **Swift UI and Combine** for fun and reactive programming
+5. Custom **AsyncImage** for previous platform versions
 
 ## Thanks, you guys are awesome
 1. [Rohit Mehta](mailto:rohit.mehta@freshii.com) for sweet design ideas
@@ -61,6 +64,12 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 ## Development is in progress
 ## Features in development:
 
-🔜 Image loader component will be updated
+🔜 Person details
+
+🔜 Favourites
+
+🔜 Albums
+
+🔜 Search favourites by name, email, etc.
 
 ❔ Unit tests

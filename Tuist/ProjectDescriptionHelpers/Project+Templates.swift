@@ -82,6 +82,7 @@ extension Project {
       infoPlist: .extendingDefault(with: infoPlist),
       sources: ["Targets/\(name)/Sources/**"],
       resources: ["Targets/\(name)/Resources/**"],
+      actions: [.pre(path: "swiftlint.sh", name: "Swift Lint")],
       dependencies: dependencies)
 
     let testTarget = Target(

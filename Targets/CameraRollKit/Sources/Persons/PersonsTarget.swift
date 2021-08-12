@@ -26,7 +26,7 @@ enum PersonsTarget {
 extension PersonsTarget: TargetType {
   var baseURL: URL { URL(string: "https://randomuser.me/")! }
   var path: String { "api" }
-  var headers: [String : String]? { ["Content-type": "application/json"] }
+  var headers: [String: String]? { ["Content-type": "application/json"] }
   var method: Moya.Method { .get }
   var task: Moya.Task {
     .requestParameters(parameters: ["results": limit], encoding: URLEncoding.queryString)
