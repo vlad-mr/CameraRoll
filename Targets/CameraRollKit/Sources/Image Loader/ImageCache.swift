@@ -16,6 +16,8 @@ public protocol ImageCache {
 // MARK: - TemporaryImageCache
 
 public struct TemporaryImageCache: ImageCache {
+  public init() {}
+  
   private let cache: NSCache<NSURL, UIImage> = {
     let cache = NSCache<NSURL, UIImage>()
     cache.countLimit = 100
