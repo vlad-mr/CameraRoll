@@ -52,6 +52,7 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 
 2. **MVVM + Coordinators** for presentation layer
 4. **Swift UI and Combine** for fun and reactive programming
+5. Custom **AsyncImage** for previous platform versions
 
 ## Thanks, you guys are awesome
 1. [Rohit Mehta](mailto:rohit.mehta@freshii.com) for sweet design ideas
