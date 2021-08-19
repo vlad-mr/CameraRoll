@@ -14,7 +14,7 @@
 1. Download project
 2. Open folder in **Terminal**
 3. Run `tuist generate --open`
-4. Select your **dev team (for all targets)** before building for Device, no additional work for Simulator
+4. Select your **dev team** before building for Device, no additional work for Simulator
 5. Build with **Xcode** or `tuist build` and have fun
 6. <sub>If you see issue with file permisions run `chmod +x swiftlint.sh`</sub>
 
