@@ -59,17 +59,3 @@ https://user-images.githubusercontent.com/55185591/129115906-f4956140-4682-48b4-
 2. https://randomuser.me/ for photos
 3. https://hatchful.shopify.com for logos
 4. https://appicon.co for icons generation
-
-# Attention ⚠️
-## Development is in progress
-## Features in development:
-
-🔜 Person details
-
-🔜 Favourites
-
-🔜 Albums
-
-🔜 Search favourites by name, email, etc.
-
-❔ Unit tests
